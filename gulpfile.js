@@ -1,4 +1,8 @@
 var gulp = require('gulp');
+var cssnano = require('gulp-cssnano');
+var rename = require("gulp-rename");
+var sourcemaps = require('gulp-sourcemaps');
+var htmlmin = require('gulp-htmlmin');
 
 var path = {
     src: "bower_components"
@@ -19,4 +23,20 @@ gulp.task("copyDemo1BootstrapJS", function(){
             .pipe(gulp.dest("demo1/Scripts"));
 });
 
-gulp.task("Demo1", ["copyDemo1BootstrapCSS", "copyDemo1BootstrapFonts", "copyDemo1BootstrapJS" ]);
+gulp.task("minCSSDemo1", function(){
+    return gulp.src("Demo1/css/site.css")
+           .pipe(sourcemaps.init())
+           .pipe(cssnano())
+           .pipe(rename("site.min.css"))
+           .pipe(sourcemaps.write())
+           .pipe(gulp.dest("Demo1/css"));
+});
+
+gulp.task("minHTMLDemo1", function(){
+    return gulp.src("Demo1/solution.html")
+           .pipe(htmlmin({removeComments: true, collapseWhitespace: true}))
+           .pipe(rename("solution.min.html"))
+           .pipe(gulp.dest("Demo1"));
+});
+
+gulp.task("Demo1", ["copyDemo1BootstrapCSS", "copyDemo1BootstrapFonts", "copyDemo1BootstrapJS", "minCSSDemo1","minHTMLDemo1"  ]);
