@@ -40,7 +40,7 @@ gulp.task("minHTMLDemo1", function(){
            .pipe(gulp.dest("Demo1"));
 });
 gulp.task("combineMinJSDemo1", function(){
-    gulp.src("Demo1/Scripts/*.min.js")
+    gulp.src(["Demo1/Scripts/jquery.min.js","Demo1/Scripts/bootstrap.min.js"])
         .pipe(concat("vendor.js"))
         .pipe(gulp.dest("Demo1/Scripts/"));
 });
