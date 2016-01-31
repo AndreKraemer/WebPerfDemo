@@ -3,6 +3,7 @@ var cssnano = require('gulp-cssnano');
 var rename = require("gulp-rename");
 var sourcemaps = require('gulp-sourcemaps');
 var htmlmin = require('gulp-htmlmin');
+var concat = require('gulp-concat');
 
 var path = {
     src: "bower_components"
@@ -38,5 +39,10 @@ gulp.task("minHTMLDemo1", function(){
            .pipe(rename("solution.min.html"))
            .pipe(gulp.dest("Demo1"));
 });
+gulp.task("combineMinJSDemo1", function(){
+    gulp.src("Demo1/Scripts/*.min.js")
+        .pipe(concat("vendor.js"))
+        .pipe(gulp.dest("Demo1/Scripts/"));
+});
 
-gulp.task("Demo1", ["copyDemo1BootstrapCSS", "copyDemo1BootstrapFonts", "copyDemo1BootstrapJS", "minCSSDemo1","minHTMLDemo1"  ]);
+gulp.task("Demo1", ["copyDemo1BootstrapCSS", "copyDemo1BootstrapFonts", "copyDemo1BootstrapJS", "minCSSDemo1","minHTMLDemo1", "combineMinJSDemo1"]);
