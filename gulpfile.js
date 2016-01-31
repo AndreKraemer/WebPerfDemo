@@ -19,7 +19,7 @@ gulp.task("copyDemo1BootstrapFonts", function(){
 });
 
 gulp.task("copyDemo1BootstrapJS", function(){
-    return gulp.src([path.src + "/bootstrap/dist/js/bootstrap.js", path.src+"/jquery/dist/jquery.*js"])
+    return gulp.src([path.src + "/bootstrap/dist/js/bootstrap.*js", path.src+"/jquery/dist/jquery.*js"])
             .pipe(gulp.dest("demo1/Scripts"));
 });
 
