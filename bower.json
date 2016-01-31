@@ -1,0 +1,22 @@
+{
+  "name": "WebPerfDemo",
+  "homepage": "https://github.com/AndreKraemer/WebPerfDemo",
+  "authors": [
+    "Andre Kraemer <andre@andrekraemer.de>"
+  ],
+  "description": "Simple Demo Project",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "bootstrap": "*"
+  }
+}

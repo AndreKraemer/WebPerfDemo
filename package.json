@@ -1,0 +1,28 @@
+{
+  "name": "webperfdemo",
+  "version": "1.0.0",
+  "description": "Simple Demo for Web Performance",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreKraemer/WebPerfDemo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreKraemer/WebPerfDemo/issues"
+  },
+  "homepage": "https://github.com/AndreKraemer/WebPerfDemo#readme",
+  "dependencies": {
+      "gulp" : "*",
+      "gulp-concat": "*",
+      "gulp-uglify": "*",
+      "gulp-cssnano": "*",
+      "gulp-sourcemaps": "*",
+      "gulp-htmlmin": "*",
+      "gulp-rename": "*"
+  }
+}
