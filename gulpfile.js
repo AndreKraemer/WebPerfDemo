@@ -46,3 +46,20 @@ gulp.task("combineMinJSDemo1", function(){
 });
 
 gulp.task("Demo1", ["copyDemo1BootstrapCSS", "copyDemo1BootstrapFonts", "copyDemo1BootstrapJS", "minCSSDemo1","minHTMLDemo1", "combineMinJSDemo1"]);
+
+gulp.task("copyDemo3BootstrapCSS", function(){
+    return gulp.src(path.src + "/bootstrap/dist/css/bootstrap.*css")
+            .pipe(gulp.dest("demo3/css"));
+});
+
+gulp.task("copyDemo3BootstrapFonts", function(){
+    return gulp.src(path.src + "/bootstrap/dist/fonts/*")
+            .pipe(gulp.dest("demo3/fonts"));
+});
+
+gulp.task("copyDemo3BootstrapJS", function(){
+    return gulp.src([path.src + "/bootstrap/dist/js/bootstrap.*js", path.src+"/jquery/dist/jquery.*js"])
+            .pipe(gulp.dest("demo3/Scripts"));
+});
+
+gulp.task("Demo3", ["copyDemo3BootstrapCSS", "copyDemo3BootstrapFonts", "copyDemo3BootstrapJS"]);
