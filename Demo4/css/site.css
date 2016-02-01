@@ -1,0 +1,14 @@
+body {
+  padding-top: 50px;
+}
+
+
+#userList p{
+    position: relative;
+}
+
+.leftOffset{
+    padding-left:10px;
+    margin-left: 10px;
+    left: 30px;
+}

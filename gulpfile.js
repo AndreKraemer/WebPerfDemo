@@ -63,3 +63,20 @@ gulp.task("copyDemo3BootstrapJS", function(){
 });
 
 gulp.task("Demo3", ["copyDemo3BootstrapCSS", "copyDemo3BootstrapFonts", "copyDemo3BootstrapJS"]);
+
+gulp.task("copyDemo4BootstrapCSS", function(){
+    return gulp.src(path.src + "/bootstrap/dist/css/bootstrap.*css")
+            .pipe(gulp.dest("demo4/css"));
+});
+
+gulp.task("copyDemo4BootstrapFonts", function(){
+    return gulp.src(path.src + "/bootstrap/dist/fonts/*")
+            .pipe(gulp.dest("demo4/fonts"));
+});
+
+gulp.task("copyDemo4BootstrapJS", function(){
+    return gulp.src([path.src + "/bootstrap/dist/js/bootstrap.*js", path.src+"/jquery/dist/jquery.*js"])
+            .pipe(gulp.dest("demo4/Scripts"));
+});
+
+gulp.task("Demo4", ["copyDemo4BootstrapCSS", "copyDemo4BootstrapFonts", "copyDemo4BootstrapJS"]);
