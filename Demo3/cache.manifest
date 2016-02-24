@@ -1,15 +1,15 @@
 CACHE MANIFEST
 
 CACHE:
-Scripts/bootstrap.js
-Scripts/jquery.js
+scripts/bootstrap.js
+scripts/jquery.js
 app/app.js
-app/usecase1/usecase1Service.js
-app/usecase1/usecase1Controller.js
-app/usecase1/usecase1Template.html
+app/usecase1/useCase1Service.js
+app/usecase1/UseCase1Controller.js
+app/usecase1/UseCase1Template.html
 app/usecase2/usecase2Service.js
-app/usecase2/usecase2Controller.js
-app/usecase2/usecase2Template.html
+app/usecase2/UseCase2Controller.js
+app/usecase2/UseCase2Template.html
 
 NETWORK:
 *

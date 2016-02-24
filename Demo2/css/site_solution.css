@@ -8,9 +8,5 @@ p:nth-child(3) {
     display: none;
 }
 
-@media print  {
-   body{
-       font-size:35px;
-   }
-}
+
 
