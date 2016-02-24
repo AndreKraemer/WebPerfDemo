@@ -23,6 +23,7 @@
       "gulp-cssnano": "*",
       "gulp-sourcemaps": "*",
       "gulp-htmlmin": "*",
-      "gulp-rename": "*"
+      "gulp-rename": "*",
+      "gulp-uncss":"*"
   }
 }

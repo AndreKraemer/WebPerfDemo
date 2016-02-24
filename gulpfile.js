@@ -4,6 +4,7 @@ var rename = require("gulp-rename");
 var sourcemaps = require('gulp-sourcemaps');
 var htmlmin = require('gulp-htmlmin');
 var concat = require('gulp-concat');
+var uncss = require('gulp-uncss');
 
 var path = {
     src: "bower_components"
@@ -45,12 +46,31 @@ gulp.task("combineMinJSDemo1", function(){
         .pipe(gulp.dest("Demo1/Scripts/"));
 });
 
-gulp.task("Demo1", ["copyDemo1BootstrapCSS", "copyDemo1BootstrapFonts", "copyDemo1BootstrapJS", "minCSSDemo1","minHTMLDemo1", "combineMinJSDemo1"]);
+gulp.task('uncssDemo1', function() {
+  return gulp.src([
+      "demo1/css/bootstrap.css",
+      "demo1/css/site.css"
+    ])
+    .pipe(uncss({
+      html: [
+        "demo1/index.html",
+        "demo1/solution.html",
+        "demo1/solution.min.html"
+      ]
+    }))
+    .pipe(concat("all.min.css"))
+    .pipe(cssnano())
+    .pipe(gulp.dest("Demo1/css"));
+});
+
+gulp.task("Demo1", ["copyDemo1BootstrapCSS", "copyDemo1BootstrapFonts", "copyDemo1BootstrapJS", "minCSSDemo1","minHTMLDemo1", "combineMinJSDemo1", "uncssDemo1"]);
 
 gulp.task("copyDemo3BootstrapCSS", function(){
     return gulp.src(path.src + "/bootstrap/dist/css/bootstrap.*css")
             .pipe(gulp.dest("demo3/css"));
 });
+
+
 
 gulp.task("copyDemo3BootstrapFonts", function(){
     return gulp.src(path.src + "/bootstrap/dist/fonts/*")
