@@ -7,7 +7,7 @@ function repeatOften() {
   var outer = document.getElementById("container");
   outer.appendChild(d);
   if(!stop){
-     setTimeout(repeatOften, 10); 
+     setTimeout(repeatOften, 2); 
   }
 }
 

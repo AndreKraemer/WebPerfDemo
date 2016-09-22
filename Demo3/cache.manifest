@@ -1,13 +1,18 @@
 CACHE MANIFEST
+# v1.4 2016-03-24
+# Version comment to trigger reloads!  
 
 CACHE:
+
+css/site.css
+css/bootstrap.css
 scripts/bootstrap.js
 scripts/jquery.js
 app/app.js
 app/usecase1/useCase1Service.js
 app/usecase1/UseCase1Controller.js
 app/usecase1/UseCase1Template.html
-app/usecase2/usecase2Service.js
+app/usecase2/useCase2Service.js
 app/usecase2/UseCase2Controller.js
 app/usecase2/UseCase2Template.html
 
