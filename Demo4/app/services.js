@@ -12,7 +12,9 @@
         xhr.open('GET', encodeURI('http://jsonplaceholder.typicode.com/users'));
         xhr.onload = function() {
             if (xhr.status === 200) {
-                cb(JSON.parse(xhr.responseText));
+                setTimeout(function() {
+                     cb(JSON.parse(xhr.responseText));
+                }, 10000);              
             }
         };
     xhr.send();
